@@ -1,0 +1,11 @@
+---
+services:
+  cde_demo:
+    image: ghcr.io/pgodschalk/cde-demo:latest
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./cde_demo:/usr/src/app/cde_demo
+    restart: always
