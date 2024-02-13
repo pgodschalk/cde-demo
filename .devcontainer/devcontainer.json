@@ -29,7 +29,8 @@
 		}
 	},
 
-	"postStartCommand": "DOCKER_IMAGE_TAG=$(git rev-parse HEAD) docker compose up -d; gh codespace ports visibility 8000:public -c $CODESPACE_NAME; echo 'export DOCKER_IMAGE_TAG=${git-rev-parse HEAD}' >> ~/.bashrc"
+	"postStartCommand": "DOCKER_IMAGE_TAG=$(git rev-parse HEAD) docker compose up -d; gh codespace ports visibility 8000:public -c $CODESPACE_NAME; echo 'export DOCKER_IMAGE_TAG=${git rev-parse HEAD}' >> ~/.docker_image_tag",
+	"postAttachCommand": "source ~/.docker_image_tag"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
