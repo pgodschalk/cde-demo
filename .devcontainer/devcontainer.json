@@ -32,7 +32,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "gh codespace ports visibility 8000:public -c $CODESPACE_NAME",
 
-	"postStartCommand": "docker compose up -d"
+	"postStartCommand": "DOCKER_IMAGE_TAG=$(git rev-parse --short=7 HEAD) docker compose up -d"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
