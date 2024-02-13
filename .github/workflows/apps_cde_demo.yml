@@ -3,13 +3,13 @@ name: CDE Demo
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/apps_cde_demo.yml'
       - 'cde_demo/**'
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/apps_cde_demo.yml'
       - 'cde_demo/**'
