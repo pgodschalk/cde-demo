@@ -3,6 +3,8 @@ services:
   cde_demo:
     image: ghcr.io/pgodschalk/cde-demo:${DOCKER_IMAGE_TAG:-latest}
     build:
+      cache_from:
+        - ghcr.io/pgodschalk/cde-demo:${DOCKER_IMAGE_TAG:-latest}
       context: .
     ports:
       - 8000:8000
