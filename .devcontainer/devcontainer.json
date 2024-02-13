@@ -14,7 +14,8 @@
 		"ghcr.io/devcontainers/features/python:1": {
 			"installTools": true,
 			"version": "3.12"
-		}
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -22,8 +23,14 @@
 		8000
 	],
 
+	"portsAttributes": {
+		"8000": {
+			"label": "web"
+		}
+	},
+
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "docker --version"
+	"postCreateCommand": "gh codespace ports visibility 8000:public -c $CODESPACE_NAME",
 
 	"postStartCommand": "docker compose up -d"
 
