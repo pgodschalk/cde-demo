@@ -51,7 +51,7 @@ jobs:
           images: ${{ env.REGISTRY }}/pgodschalk/cde-demo
           tags: |
             type=sha,prefix=
-            type=raw,value={{branch}}
+            type=raw,value=${{ github.event.pull_request.head.sha }},event=pr
             # set latest tag for default branch
             type=raw,value=latest,enable={{is_default_branch}}
           labels: |
